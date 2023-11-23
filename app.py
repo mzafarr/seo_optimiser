@@ -112,12 +112,10 @@ if uploaded_file is not None:
         optimized_df = pd.DataFrame(optimized_data)
         # set optimized column to yes for all
         optimized_df['Optimized'] = 'yes'
-        st.subheader("Download Optimized Data")
         # Save the optimized data as an Excel file
         excel_file = 'optimized_data.xlsx'
         optimized_df.to_excel(excel_file, index=False)
 
-        st.subheader("Download Optimized Data")
         with pd.ExcelWriter(excel_file, engine='xlsxwriter') as writer:
             optimized_df.to_excel(writer, sheet_name='Sheet1', index=False)
         excel_data = open(excel_file, 'rb').read()
