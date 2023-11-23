@@ -7,7 +7,7 @@ import base64  # Add import for base64
 from rules import seo_rules, example_input, example_output
 from openai import OpenAI
 
-openai_api_key = st.secrets["OPENAI_API_KEY"]
+openai_api_key = st.secrets["api_key"]
 client = OpenAI(api_key = openai_api_key)
 
 st.title("AI Product Optimization")
